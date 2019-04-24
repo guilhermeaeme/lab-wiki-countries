@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import './App.css';
 import countries from './countries.json';
 import CountryDetail from './CountryDetail';
-import { Link, Switch, Route } from 'react-router-dom';
+import { Link, NavLink, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -19,7 +19,7 @@ class App extends Component {
             <div className="col-5" style={{ maxHeight: '90vh', overflow: 'scroll' }}>
               <div className="list-group">
                 {countries.map((item) => (
-                  <Link key={item.cca3} className="list-group-item list-group-item-action" to={`/${item.cca3}`}>{item.flag} {item.name.common}</Link>
+                  <NavLink activeClassName="active" key={item.cca3} className="list-group-item list-group-item-action" to={`/${item.cca3}`}>{item.flag} {item.name.common}</NavLink>
                 ))}
               </div>
             </div>
